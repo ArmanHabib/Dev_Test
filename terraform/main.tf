@@ -5,9 +5,15 @@ terraform {
       version = "~>4.0"
     }
   }
+
+terraform {
   backend "s3" {
-    key = "aws/ec2-deploy/terraform.tfstate"
+    bucket = var.TF_STATE_BUCKET_NAME
+    key    = "terraform.tfstate"
+    region = var.AWS_REGION
   }
+}
+
 }
 
 provider "aws" {
