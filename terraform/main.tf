@@ -5,9 +5,9 @@ terraform {
       version = "~>4.0"
     }
   }
-  backend "s3" {
-    key = "aws/ec2-deploy/terraform.tfstate"
-  }
+  terraform {
+  backend "s3" {}
+}
 }
 
 provider "aws" {
